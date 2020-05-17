@@ -85,7 +85,7 @@
         why it is important to stay more than 1 meter (3 feet) away from a
         person who is sick</p>
     <hr>
-    <p class="text2"> The below plots are the best visualizations possible other than choropleths
+    <p class="text2"> The below plots are the best visualizations possible, other than choropleths
         (Theses are actual maps shaded in a way to show intensity of desired data), since these are very heavy for
         loading. <br>As you may see the color scheme and y-axis portray different columns of the table,
         this is done to get deeper understanding of data through visualization alone.<br>You can do your own analysis,
@@ -109,6 +109,13 @@
         but with 2.6k and 27.6k as total deaths.<br>
         Hence I can say Spain should take this pandemic more seriously and more attention should be given to the medical facilities.
     </p>
+
+    <p class="text2"> The below pie charts are pretty self explanatory, as we can see how much each state and country is
+        responsible and for how much percentage-wise for coronavirus in India and the whole world.<br>
+        These graphs are interactive hence we can click on the country to remove them from the pie chart (I have decided to show only
+        top 21 countries as the rest contribute very little and hence clutter up the pie-chart)
+    </p>
+
     <h2 class="table-heading"><u>Total Cases and Deaths India</u></h2>
     <div class="plots">
         {{pie_total_cases_deaths | safe}}
@@ -117,12 +124,6 @@
     <div class="plots">
         {{pie_total_cases_deaths1 | safe}}
     </div>
-
-    <p class="text2"> The above pie charts are pretty self explanatory as we can see how much each state and country is
-        responsible and for how much percentage-wise for coronavirus in India and the whole world.<br>
-        These graphs are interactive hence we can click on the country to remove them from the pie chart (I have decided to show only
-        top 21 countries as the rest contribute very little and hence clutter up the pie-chart)
-    </p>
 
     <h2 class="table-heading"><u>Total Recovered (Cases) India</u></h2>
     <div class="plots">
