@@ -1,0 +1,186 @@
+{% include 'base.html' %}
+
+{% block title %}  {% endblock %}
+{% block content %}
+
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='style.css') }}">
+
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js"></script>
+
+<h3 class="table-heading">This page is dedicated to analysing the COVID 19 data with respect to India and World. Analysis done on 17th May</h3>
+<h3 class="table-head2">The source of the data has been provided at the end of the page
+    along with the table I have used for generating the below graphs</h3>
+
+<div class="page">
+    <div class="total-cases-info"><h3>Summary for India</h3>
+        <div class = "total-cases-child child1">
+            <span class="chill">Total Cases</span>
+            <h2>
+                {{total_data[0] | safe}}
+            </h2>
+        </div>
+        <div class = "total-cases-child child2">
+            <span class="chill">Total Recovered</span>
+            <h2>
+                {{total_data[1] | safe}}
+            </h2>
+        </div>
+        <div class = "total-cases-child child3">
+            <span class="chill">Total Deaths</span>
+            <h2>
+                {{total_data[2] | safe}}
+            </h2>
+        </div>
+        <div class = "total-cases-child child3">
+            <span class="chill">Active Cases</span>
+            <h2>
+                {{total_data[3] | safe}}
+            </h2>
+        </div>
+    </div>
+    <div class="total-cases-info"><h3>Summary for World</h3>
+        <div class = "total-cases-child child1">
+            <span class="chill">Total Cases</span>
+            <h2>
+                {{total_data1[0] | safe}}
+            </h2>
+        </div>
+        <div class = "total-cases-child child2">
+            <span class="chill">Total Recovered</span>
+            <h2>
+                {{total_data1[1] | safe}}
+            </h2>
+        </div>
+        <div class = "total-cases-child child3">
+            <span class="chill">Total Deaths</span>
+            <h2>
+                {{total_data1[2] | safe}}
+            </h2>
+        </div>
+        <div class = "total-cases-child child3">
+            <span class="chill">Active Cases</span>
+            <h2>
+                {{total_data1[3] | safe}}
+            </h2>
+        </div>
+    </div>
+    <h3 class="table-heading">A Brief on coronavirus and COVID-19</h3>
+
+    <p class="text1"> Corona viruses are a large family of viruses which may cause illness
+        in animals or humans. In humans, several coronaviruses are known
+        to cause respiratory infections ranging from the common cold to more
+        severe diseases such as Middle East Respiratory Syndrome (MERS)
+        and Severe Acute Respiratory Syndrome (SARS). The most recently
+        discovered coronavirus causes coronavirus disease COVID-19. </p>
+    <p class="text1"> People can catch COVID-19 from others who have the virus. The
+        disease can spread from person to person through small droplets from
+        the nose or mouth which are spread when a person with COVID-19
+        coughs or exhales. These droplets land on objects and surfaces
+        around the person. Other people then catch COVID-19 by touching
+        these objects or surfaces, then touching their eyes, nose or mouth.
+        People can also catch COVID-19 if they breathe in droplets from a
+        person with COVID-19 who coughs out or exhales droplets. This is
+        why it is important to stay more than 1 meter (3 feet) away from a
+        person who is sick</p>
+    <hr>
+    <p class="text2"> The below plots are the best visualizations possible other than choropleths
+        (Theses are actual maps shaded in a way to show intensity of desired data), since these are very heavy for
+        loading. <br>As you may see the color scheme and y-axis portray different columns of the table,
+        this is done to get deeper understanding of data through visualization alone.<br>You can do your own analysis,
+        also i have presented my view below<br> Note: I have dropped USA data for visualization as it is extremely high
+        and skews data for other countries </p>
+
+    <h2 class="table-heading"><u>Total Cases (Deaths) India</u></h2>
+    <div class="plots">
+        {{total_cases_deaths | safe}}
+    </div>
+    <p class="text2"> Looking at the graph we can observe the color difference between Gujarat and Tamil nadu, here I'm
+        comparing these two only as they have comparable total cases 10.98k and 10.58k, but having total deaths of 625 and 74 respectively.<br>
+        Hence I can say that Gujarat should follow the lockdown protocols and maybe
+        they have poor medical facilities to cope up with this spread.
+    </p>
+    <h2 class="table-heading"><u>Total Cases (Deaths) World</u></h2>
+    <div class="plots">
+        {{total_cases_deaths1 | safe}}
+    </div>
+    <p class="text2"> Here I'm comparing Russia with Spain since both have comparable total cases 281.75k and 277.72k,
+        but with 2.6k and 27.6k as total deaths.<br>
+        Hence I can say Spain should take this pandemic more seriously and more attention should be given to the medical facilities.
+    </p>
+    <h2 class="table-heading"><u>Total Cases and Deaths India</u></h2>
+    <div class="plots">
+        {{pie_total_cases_deaths | safe}}
+    </div>
+    <h2 class="table-heading"><u>Total Cases and Deaths World</u></h2>
+    <div class="plots">
+        {{pie_total_cases_deaths1 | safe}}
+    </div>
+
+    <p class="text2"> The above pie charts are pretty self explanatory as we can see how much each state and country is
+        responsible and for how much percentage-wise for coronavirus in India and the whole world.<br>
+        These graphs are interactive hence we can click on the country to remove them from the pie chart (I have decided to show only
+        top 21 countries as the rest contribute very little and hence clutter up the pie-chart)
+    </p>
+
+    <h2 class="table-heading"><u>Total Recovered (Cases) India</u></h2>
+    <div class="plots">
+        {{total_recovered_cases | safe}}
+    </div>
+    <p class="text2">As we have discovered earlier that Gujarat and Tamil nadu are comparable on the scale of total cases,
+        from the above graph we can also see that Gujarat and Tamil nadu have 4.3k and 3.5k as total recovered cases. <br>
+        Hence I would like to stand by my earlier observation that Gujarat should follow the lockdown measures
+    </p>
+    <h2 class="table-heading"><u>Total Recovered (Cases) World</u></h2>
+    <div class="plots">
+        {{total_recovered_cases1 | safe}}
+    </div>
+    <p class="text2">Here I'm comparing Russia and Spain again, although their total cases are comparable as we have observed that earlier,
+        the total recovered is far less in Russia with 67.37k whereas Spain have 195.95k.<br>
+        Hence I feel that Spain is aiming for quicker outcomes whereas Russia is taking it slow presumably for better outcomes
+    </p>
+    <h2 class="table-heading"><u>Test positive rate(total tests) India</u></h2>
+    <div class="plots">
+        {{test_positive_rate_tests | safe}}
+    </div>
+    <p class="text2">
+        In the above graph what stands out is Chandigarh as it has high positive rate with 7.6% that is around
+        Gujarat and Maharashtra at 7.9% and 10.6%, but whats striking is the number of tests, unlike the other two states
+        Chandigarh has conducted only 2.7k tests so<br>
+        Hence I feel Chandigarh has to conduct many more tests for precaution before it gets out of hand
+    </p>
+    <h2 class="table-heading"><u>Test positive rate(total tests) World</u></h2>
+    <div class="plots">
+        {{test_positive_rate_tests1 | safe}}
+    </div>
+    <p class="text2">
+        From the above graphs the countries that stand out are Brazil, Mexico and Ecuador since they show 31.76%, 28.8% and 35.1% as
+        positive rate and have conducted immensely low number or tests <br>
+        Hence I feel that they should be cautious and consider strict lockdown for the near known future
+    </p>
+
+    <h2 class="table-heading"><u>Date-wise COVID-19 confirmed, deaths and recovered</u></h2>
+    <div class="plots">
+        {{time_series | safe}}
+    </div>
+
+    <h2 class="table-heading"><u>Real-time updates on Corona Cases</u></h2>
+    <div class="table-data">
+        {{table_in_plotly | safe}};
+    </div>
+    <h2 class="table-heading"><u>Real-time updates on Corona Cases</u></h2>
+    <div class="table-data">
+        {{table_in_plotly1 | safe}};
+    </div>
+
+    <h3 class="table-head2">Source:</h3>
+    <p class="text2">India Data : <a href="https://www.mohfw.gov.in/">www.mohfw.gov.in</a></p>
+    <p class="text2">World Data : <a href="https://www.worldometers.info/coronavirus/">www.worldometers.info/coronavirus/</a></p>
+
+</div>
+{% endblock %}
+
+{% block body %}
+
+{% endblock %}
