@@ -110,7 +110,7 @@ def homepage():
 
     print('all plotting methods called')
 
-    return render_template('index.html',
+    html = render_template('index.html',
                            total_data=total,
                            total_data1=total1,
                            table_in_plotly=plotly_table,
@@ -124,6 +124,8 @@ def homepage():
                            test_positive_rate_tests=test_positive_rate_tests,
                            test_positive_rate_tests1=test_positive_rate_tests1,
                            time_series=time_series,)
+
+    return html
 
 
 if __name__ == '__main__':
