@@ -8,6 +8,7 @@ import json
 import numpy as np
 from flask import Flask, request, make_response, render_template
 from flask_cors import cross_origin
+import time
 import scrape_and_clean
 import plotting_functions
 
@@ -17,7 +18,7 @@ app = Flask(__name__)
 @app.route('/', methods=['GET'])
 def homepage():
 
-    print('started')
+    print('app started')
     
     # Sorry for this mess, this wont run inside the clean method so i had to clean it elsewhere ------------------------
     india_url = 'https://www.mohfw.gov.in/'
@@ -29,6 +30,8 @@ def homepage():
     world_df_clean = scrape_and_clean.clean_data(world_df)
     temp_df = india_df_clean.reset_index()
     temp_df1 = world_df_clean.reset_index()
+
+    print('Scrapping done')
 
     # Adding Positive Rate
     # temp_df1['Positive Rate'] = ((temp_df1['TotalCases']/temp_df1['Total Tests'])*100).round(2)
@@ -60,6 +63,8 @@ def homepage():
 
     # The cleaning is now done -----------------------------------------------------------------------------------------
 
+    print('cleaning done')
+
     total = temp_df[['Total Cases', 'Total Recovered', 'Deaths']].sum().values
     outcome = sum(temp_df[['Total Recovered', 'Deaths']].sum())
     cases = temp_df['Total Cases'].sum()
@@ -89,31 +94,36 @@ def homepage():
                     '/csse_covid_19_time_series/time_series_covid19_recovered_global.csv '
     recovered_df = scrape_and_clean.scrape_and_clean_time_series(recovered_url)
 
+    print('scrapping and cleaning done for time series')
+
+    plotly_table = plotting_functions.table(temp_df)
+    plotly_table1 = plotting_functions.table(temp_df1)
+    total_cases_deaths = plotting_functions.bar_chart(temp_df, total_cases_india, deaths_india, 'India')
+    total_cases_deaths1 = plotting_functions.bar_chart(temp_df1.iloc[2:22, :], total_cases_world, deaths_world, 'World')
+    pie_total_cases_deaths = plotting_functions.pie_chart(temp_df, total_cases_india, deaths_india, 'India')
+    pie_total_cases_deaths1 = plotting_functions.pie_chart(temp_df1.iloc[1:22, :], total_cases_world, deaths_world, 'World')
+    total_recovered_cases = plotting_functions.bar_chart(temp_df, total_recovered_india, total_cases_india, 'India')
+    total_recovered_cases1 = plotting_functions.bar_chart(temp_df1.iloc[2:22, :], total_recovered_world, total_cases_world, 'World')
+    test_positive_rate_tests = plotting_functions.bar_chart(temp_df, positive_rate_india, total_tests_india, 'India')
+    test_positive_rate_tests1 = plotting_functions.bar_chart(temp_df1.iloc[2:22, :], positive_rate_world, total_tests_world, 'World')
+    time_series = plotting_functions.time_series(confirmed_df, deaths_df, recovered_df)
+
+    print('all plotting methods called')
+
     return render_template('index.html',
                            total_data=total,
                            total_data1=total1,
-                           table_in_plotly=plotting_functions.table(temp_df),
-                           table_in_plotly1=plotting_functions.table(temp_df1),
-                           total_cases_deaths=plotting_functions.bar_chart(temp_df, total_cases_india,
-                                                                           deaths_india, 'India'),
-                           total_cases_deaths1=plotting_functions.bar_chart(temp_df1.iloc[2:22, :], total_cases_world,
-                                                                            deaths_world, 'World'),
-                           pie_total_cases_deaths=plotting_functions.pie_chart(temp_df, total_cases_india,
-                                                                               deaths_india, 'India'),
-                           pie_total_cases_deaths1=plotting_functions.pie_chart(temp_df1.iloc[1:22, :],
-                                                                                total_cases_world,
-                                                                                deaths_world, 'World'),
-                           total_recovered_cases=plotting_functions.bar_chart(temp_df, total_recovered_india,
-                                                                              total_cases_india, 'India'),
-                           total_recovered_cases1=plotting_functions.bar_chart(temp_df1.iloc[2:22, :],
-                                                                               total_recovered_world,
-                                                                               total_cases_world, 'World'),
-                           test_positive_rate_tests=plotting_functions.bar_chart(temp_df, positive_rate_india,
-                                                                                 total_tests_india, 'India'),
-                           test_positive_rate_tests1=plotting_functions.bar_chart(temp_df1.iloc[2:22, :],
-                                                                                  positive_rate_world,
-                                                                                  total_tests_world, 'World'),
-                           time_series=plotting_functions.time_series(confirmed_df, deaths_df, recovered_df),)
+                           table_in_plotly=plotly_table,
+                           table_in_plotly1=plotly_table1,
+                           total_cases_deaths=total_cases_deaths,
+                           total_cases_deaths1=total_cases_deaths1,
+                           pie_total_cases_deaths=pie_total_cases_deaths,
+                           pie_total_cases_deaths1=pie_total_cases_deaths1,
+                           total_recovered_cases=total_recovered_cases,
+                           total_recovered_cases1=total_recovered_cases1,
+                           test_positive_rate_tests=test_positive_rate_tests,
+                           test_positive_rate_tests1=test_positive_rate_tests1,
+                           time_series=time_series,)
 
 
 if __name__ == '__main__':
