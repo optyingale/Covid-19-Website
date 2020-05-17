@@ -115,6 +115,7 @@ def homepage():
 
 
 if __name__ == '__main__':
-    port = int(os.getenv('PORT', 5000))
-    print(f"Starting app on port {port}")
-    app.run(debug=False, port=port, host='127.0.0.1')
+    app.run(debug=False)
+#    port = int(os.getenv('PORT', 5000))
+#    print(f"Starting app on port {port}")
+#    app.run(debug=False, port=port, host='127.0.0.1')
