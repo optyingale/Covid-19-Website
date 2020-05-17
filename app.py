@@ -17,6 +17,8 @@ app = Flask(__name__)
 @app.route('/', methods=['GET'])
 def homepage():
 
+    print('started')
+    
     # Sorry for this mess, this wont run inside the clean method so i had to clean it elsewhere ------------------------
     india_url = 'https://www.mohfw.gov.in/'
     india_df = scrape_and_clean.scrape_table(india_url)
