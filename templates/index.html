@@ -86,34 +86,35 @@
         person who is sick</p>
     <hr>
     <p class="text2"> The below plots are the best visualizations possible, other than choropleths
-        (Theses are actual maps shaded in a way to show intensity of desired data), since these are very heavy for
-        loading. <br>As you may see the color scheme and y-axis portray different columns of the table,
-        this is done to get deeper understanding of data through visualization alone.<br>You can do your own analysis,
-        also i have presented my view below<br> Note: I have dropped USA data for visualization as it is extremely high
-        and skews data for other countries </p>
+        (Theses are actual maps shaded in a way to show intensity of desired data). Since those are very heavy for
+        loading, I have avoided using them. <br>As you may see the color scheme and y-axis portray different columns of the table,
+        this is done to get deeper understanding of data through visualization alone.<br>You can hover over the bars to know their
+        exact value.<br> You can zoom in using the cursor.<br>Note: I have dropped USA data for visualization as it is extremely high
+        and skews data for other countries.</p>
 
-    <h2 class="table-heading"><u>Total Cases (Deaths) India</u></h2>
+    <h2 class="table-heading"><u>Total Cases and Deaths India</u></h2>
     <div class="plots">
         {{total_cases_deaths | safe}}
     </div>
-    <p class="text2"> Looking at the graph we can observe the color difference between Gujarat and Tamil nadu, here I'm
-        comparing these two only as they have comparable total cases 10.98k and 10.58k, but having total deaths of 625 and 74 respectively.<br>
-        Hence I can say that Gujarat should follow the lockdown protocols and maybe
+    <p class="text2"> Looking at the graph we can observe, the color difference between Gujarat and Tamil nadu, here I'm
+        comparing these two states only as they have comparable total cases 10.98k and 10.58k, but having total deaths
+        625 and 74 respectively.<br>
+        Hence I feel that Gujarat should follow the lockdown protocols more strictly and maybe
         they have poor medical facilities to cope up with this spread.
     </p>
-    <h2 class="table-heading"><u>Total Cases (Deaths) World</u></h2>
+    <h2 class="table-heading"><u>Total Cases and Deaths World</u></h2>
     <div class="plots">
         {{total_cases_deaths1 | safe}}
     </div>
-    <p class="text2"> Here I'm comparing Russia with Spain since both have comparable total cases 281.75k and 277.72k,
+    <p class="text2"> Here I'm comparing Russia with Spain, since both have comparable total cases 281.75k and 277.72k,
         but with 2.6k and 27.6k as total deaths.<br>
-        Hence I can say Spain should take this pandemic more seriously and more attention should be given to the medical facilities.
+        Hence I feel Spain should take this pandemic more seriously and more attention should be given to the medical facilities.
     </p>
 
-    <p class="text2"> The below pie charts are pretty self explanatory, as we can see how much each state and country is
-        responsible and for how much percentage-wise for coronavirus in India and the whole world.<br>
-        These graphs are interactive hence we can click on the country to remove them from the pie chart (I have decided to show only
-        top 21 countries as the rest contribute very little and hence clutter up the pie-chart)
+    <p class="text2"> The below pie charts are pretty self explanatory. We can see how much each state and country has been impacted
+        by the pandemic .<br>
+        These graphs are interactive, hence we can click on the country to remove them from the pie chart (I have decided to show only
+        top 21 countries )
     </p>
 
     <h2 class="table-heading"><u>Total Cases and Deaths India</u></h2>
@@ -125,43 +126,43 @@
         {{pie_total_cases_deaths1 | safe}}
     </div>
 
-    <h2 class="table-heading"><u>Total Recovered (Cases) India</u></h2>
+    <h2 class="table-heading"><u>Total Recovered and Cases India</u></h2>
     <div class="plots">
         {{total_recovered_cases | safe}}
     </div>
-    <p class="text2">As we have discovered earlier that Gujarat and Tamil nadu are comparable on the scale of total cases,
-        from the above graph we can also see that Gujarat and Tamil nadu have 4.3k and 3.5k as total recovered cases. <br>
-        Hence I would like to stand by my earlier observation that Gujarat should follow the lockdown measures
+    <p class="text2">As we have discovered earlier, Gujarat and Tamil nadu are comparable on the scale of total cases.
+        From the above graph we can also see that Gujarat and Tamil nadu have 4.3k and 3.5k as total recovered cases. <br>
+        Hence I would like to stand by my earlier observation, Gujarat should follow the lockdown measures more strictly
     </p>
-    <h2 class="table-heading"><u>Total Recovered (Cases) World</u></h2>
+    <h2 class="table-heading"><u>Total Recovered and Cases World</u></h2>
     <div class="plots">
         {{total_recovered_cases1 | safe}}
     </div>
-    <p class="text2">Here I'm comparing Russia and Spain again, although their total cases are comparable as we have observed that earlier,
-        the total recovered is far less in Russia with 67.37k whereas Spain have 195.95k.<br>
+    <p class="text2">Here I'm comparing Russia and Spain again, although their total cases are comparable and we have observed earlier,
+        the total recovered is far less in Russia with 67.37k whereas Spain has 195.95k.<br>
         Hence I feel that Spain is aiming for quicker outcomes whereas Russia is taking it slow presumably for better outcomes
     </p>
-    <h2 class="table-heading"><u>Test positive rate(total tests) India</u></h2>
+    <h2 class="table-heading"><u>Test positive rate and total tests India</u></h2>
     <div class="plots">
         {{test_positive_rate_tests | safe}}
     </div>
     <p class="text2">
-        In the above graph what stands out is Chandigarh as it has high positive rate with 7.6% that is around
-        Gujarat and Maharashtra at 7.9% and 10.6%, but whats striking is the number of tests, unlike the other two states
+        In the above graph Chandigarh stands out with a high positive rate of 7.6% that is around
+        Gujarat(7.9%) and Maharashtra(10.6%), but whats striking is the number of tests, unlike the other two states
         Chandigarh has conducted only 2.7k tests so<br>
-        Hence I feel Chandigarh has to conduct many more tests for precaution before it gets out of hand
+        Hence I feel Chandigarh has to conduct many more tests as a precautionary measure before the spread of coronavirus gets out of hand
     </p>
-    <h2 class="table-heading"><u>Test positive rate(total tests) World</u></h2>
+    <h2 class="table-heading"><u>Test positive rate and total tests World</u></h2>
     <div class="plots">
         {{test_positive_rate_tests1 | safe}}
     </div>
+    <h2 class="table-heading"><u>Date-wise COVID-19 confirmed, deaths and recovered</u></h2>
+
     <p class="text2">
-        From the above graphs the countries that stand out are Brazil, Mexico and Ecuador since they show 31.76%, 28.8% and 35.1% as
-        positive rate and have conducted immensely low number or tests <br>
+        From the above graphs we can observe, the countries which stand out are Brazil, Mexico and Ecuador, since
+        they have the highest rate of testing positive, while conducting immensely low number of tests.<br>
         Hence I feel that they should be cautious and consider strict lockdown for the near known future
     </p>
-
-    <h2 class="table-heading"><u>Date-wise COVID-19 confirmed, deaths and recovered</u></h2>
     <div class="plots">
         {{time_series | safe}}
     </div>
