@@ -174,7 +174,7 @@ def get_data():
 
 
 sched = BackgroundScheduler(daemon=True)
-sched.add_job(get_data, 'interval', minutes=120)
+sched.add_job(get_data, 'interval', minutes=30)
 sched.start()
 
 
