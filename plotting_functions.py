@@ -15,7 +15,7 @@ def bar_chart(df, x, y, category):
                  text=df[y],
                  template='plotly_dark')
                  
-     fig.update_traces(textposition='outside')
+    fig.update_traces(textposition='outside')
 
     fig.update_layout(title={'x': 0.5, 'xanchor': 'center'},
                       height=650)
