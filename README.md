@@ -9,5 +9,6 @@
 <br>May 18:<br>
 <p><code>from apscheduler.schedulers.background import BackgroundScheduler</code><br>
 The above has helped me achieve what I was looking for. Since update the retrieve time has drastically 
-come down to 1 second response from server</p><br><p>Note: <code>render_template</code> has to be inside any app.route</p>
+come down to 1 second response from server</p><br><p>Note: <code>render_template</code> has to be inside any app.route<br>
+Even though reponse time is lower, the app goes into idling until dyno is started. Looking for a way around that</p>
 <br>

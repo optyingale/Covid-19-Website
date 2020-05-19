@@ -172,9 +172,12 @@ def get_data():
     time_series = plotting_functions.time_series(confirmed_df, deaths_df, recovered_df)
     print('Necessary plotting done', time.strftime("%I:%M:%S"))
 
-
+def send_req():
+    requests.get('https://covid-19-website-daily.herokuapp.com/')
+    
 sched = BackgroundScheduler(daemon=True)
 sched.add_job(get_data, 'interval', minutes=30)
+sched.add_job(send_req, 'interval', minutes=15)
 sched.start()
 
 
