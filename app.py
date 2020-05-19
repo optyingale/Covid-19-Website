@@ -3,6 +3,7 @@
 # 2. flask run
 
 import os
+import logger
 import requests
 import json
 import numpy as np
@@ -13,7 +14,7 @@ import plotting_functions
 from apscheduler.schedulers.background import BackgroundScheduler
 
 app = Flask(__name__)
-print('Starting first run')
+logger.log('Starting first run')
 india_url = 'https://www.mohfw.gov.in/'
 india_df = scrape_and_clean.scrape_table(india_url)
 world_url = 'https://www.worldometers.info/coronavirus/'
@@ -24,7 +25,8 @@ world_df_clean = scrape_and_clean.clean_data(world_df)
 temp_df = india_df_clean.reset_index()
 temp_df1 = world_df_clean.reset_index()
 
-print('Scrapping done', time.strftime("%I:%M:%S"))
+print('Scraping done', time.strftime("%I:%M:%S"))
+logger.log('Scraping done')
 
 # Adding Positive Rate
 # temp_df1['Positive Rate'] = ((temp_df1['TotalCases']/temp_df1['Total Tests'])*100).round(2)
@@ -54,7 +56,8 @@ for x in data1:
             temp_df.loc[temp_df[temp_df.columns[0]] == x.get('state'), 'Isolation Beds'] = int(
                 x.get('numisolationbeds'))
 
-print('Scrapping and cleaning done', time.strftime("%I:%M:%S"))
+print('Scraping and cleaning done', time.strftime("%I:%M:%S"))
+logger.log('Scraping and cleaning (testing data) done')
 
 total = temp_df[['Total Cases', 'Total Recovered', 'Deaths']].sum().values
 outcome = sum(temp_df[['Total Recovered', 'Deaths']].sum())
@@ -85,6 +88,7 @@ recovered_url = 'https://raw.githubusercontent.com/CSSEGISandData/COVID-19/maste
                 '/csse_covid_19_time_series/time_series_covid19_recovered_global.csv '
 recovered_df = scrape_and_clean.scrape_and_clean_time_series(recovered_url)
 print('Data for time Series prepared', time.strftime("%I:%M:%S"))
+logger.log('Data for time series prepared')
 
 plotly_table = plotting_functions.table(temp_df)
 plotly_table1 = plotting_functions.table(temp_df1)
@@ -100,10 +104,13 @@ test_positive_rate_tests1 = plotting_functions.bar_chart(temp_df1.iloc[2:22, :],
                                                          'World')
 time_series = plotting_functions.time_series(confirmed_df, deaths_df, recovered_df)
 print('Necessary plotting done', time.strftime("%I:%M:%S"))
+logger.log('Necessary plotting done')
 
 
 def get_data():
     print('started update')
+    logger.log('Update Started')
+
     global india_df, world_df, india_df_clean, world_df_clean, temp_df, temp_df1, response, data, data1
     india_df = scrape_and_clean.scrape_table(india_url)
     world_df = scrape_and_clean.scrape_table(world_url)
@@ -140,7 +147,8 @@ def get_data():
             if x.get('numisolationbeds') != '':
                 temp_df.loc[temp_df[temp_df.columns[0]] == x.get('state'), 'Isolation Beds'] = int(
                     x.get('numisolationbeds'))
-    print('Scrapping and cleaning done', time.strftime("%I:%M:%S"))
+    print('Scraping and cleaning done', time.strftime("%I:%M:%S"))
+    logger.log('Scraping and cleaning (testing data) done')
 
     global total, outcome, cases, total1, confirmed_df, deaths_df, recovered_df
     total = temp_df[['Total Cases', 'Total Recovered', 'Deaths']].sum().values
@@ -153,6 +161,7 @@ def get_data():
     deaths_df = scrape_and_clean.scrape_and_clean_time_series(deaths_url)
     recovered_df = scrape_and_clean.scrape_and_clean_time_series(recovered_url)
     print('Data for time series prepared', time.strftime("%I:%M:%S"))
+    logger.log('Data for time series prepated')
 
     global plotly_table, plotly_table1, total_cases_deaths, total_cases_deaths1, pie_total_cases_deaths, pie_total_cases_deaths1
     global total_recovered_cases, total_recovered_cases1, test_positive_rate_tests, test_positive_rate_tests1, time_series, html
@@ -171,9 +180,13 @@ def get_data():
                                                              total_tests_world, 'World')
     time_series = plotting_functions.time_series(confirmed_df, deaths_df, recovered_df)
     print('Necessary plotting done', time.strftime("%I:%M:%S"))
+    logger.log('Necessary plotting done')
+
 
 def send_req():
     print('sending self ping')
+    logger.log("I've hit myself")
+
     requests.get('https://covid-19-website-daily.herokuapp.com/')
     
 sched = BackgroundScheduler(daemon=True)
