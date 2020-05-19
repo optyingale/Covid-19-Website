@@ -173,6 +173,7 @@ def get_data():
     print('Necessary plotting done', time.strftime("%I:%M:%S"))
 
 def send_req():
+    print('sending self ping')
     requests.get('https://covid-19-website-daily.herokuapp.com/')
     
 sched = BackgroundScheduler(daemon=True)

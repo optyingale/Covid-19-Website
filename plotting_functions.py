@@ -12,7 +12,10 @@ def bar_chart(df, x, y, category):
     fig = px.bar(df, x=df.columns[0], y=df[x],
                  title=title,
                  color=df[y],
+                 text=df[y],
                  template='plotly_dark')
+                 
+     fig.update_traces(textposition='outside')
 
     fig.update_layout(title={'x': 0.5, 'xanchor': 'center'},
                       height=650)
