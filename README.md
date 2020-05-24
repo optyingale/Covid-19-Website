@@ -19,3 +19,8 @@ Even though reponse time is lower, the app goes into idling until dyno is starte
     <li>Hits self to stay awake</li>
     <li>Added Logger</li> 
 </ul></p>
+<br>May 24:<br>
+<p>
+<ul>
+    <li>Added in 'other' category in piechart for world as it was pretty significant and I was unintentionally misleading viewers</li>
+</ul></p>

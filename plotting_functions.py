@@ -28,6 +28,14 @@ def bar_chart(df, x, y, category):
 def pie_chart(df, x, y, category):
     title = f'{x} and {y} ' + category
 
+    other = ['other']
+    for column in df.columns[1:]:
+        other.append(df.loc[21:][column].sum())
+
+    df.drop(df.index[21:], inplace = True)
+    df.loc[df.index.max()+1] = other
+
+
     fig = make_subplots(rows=1, cols=2, specs=[[{'type': 'domain'}, {'type': 'domain'}]])
     fig.add_trace(go.Pie(labels=df[df.columns[0]], values=df[x], name=x),
                   1, 1)

@@ -95,7 +95,7 @@ plotly_table1 = plotting_functions.table(temp_df1)
 total_cases_deaths = plotting_functions.bar_chart(temp_df, total_cases_india, deaths_india, 'India')
 total_cases_deaths1 = plotting_functions.bar_chart(temp_df1.iloc[2:22, :], total_cases_world, deaths_world, 'World')
 pie_total_cases_deaths = plotting_functions.pie_chart(temp_df, total_cases_india, deaths_india, 'India')
-pie_total_cases_deaths1 = plotting_functions.pie_chart(temp_df1.iloc[1:22, :], total_cases_world, deaths_world, 'World')
+pie_total_cases_deaths1 = plotting_functions.pie_chart(temp_df1.iloc[1:, :], total_cases_world, deaths_world, 'World')
 total_recovered_cases = plotting_functions.bar_chart(temp_df, total_recovered_india, total_cases_india, 'India')
 total_recovered_cases1 = plotting_functions.bar_chart(temp_df1.iloc[2:22, :], total_recovered_world, total_cases_world,
                                                       'World')
@@ -170,8 +170,7 @@ def get_data():
     total_cases_deaths = plotting_functions.bar_chart(temp_df, total_cases_india, deaths_india, 'India')
     total_cases_deaths1 = plotting_functions.bar_chart(temp_df1.iloc[2:22, :], total_cases_world, deaths_world, 'World')
     pie_total_cases_deaths = plotting_functions.pie_chart(temp_df, total_cases_india, deaths_india, 'India')
-    pie_total_cases_deaths1 = plotting_functions.pie_chart(temp_df1.iloc[1:22, :], total_cases_world, deaths_world,
-                                                           'World')
+    pie_total_cases_deaths1 = plotting_functions.pie_chart(temp_df1.iloc[1:, :], total_cases_world, deaths_world, 'World')
     total_recovered_cases = plotting_functions.bar_chart(temp_df, total_recovered_india, total_cases_india, 'India')
     total_recovered_cases1 = plotting_functions.bar_chart(temp_df1.iloc[2:22, :], total_recovered_world,
                                                           total_cases_world, 'World')

@@ -1,7 +1,0 @@
-2020-05-20/00:19:45		Hi
-2020-05-20/00:20:08		hi
-2020-05-20/00:32:52		Starting first run
-2020-05-20/00:33:01		Scraping done
-2020-05-20/00:33:11		Scraping and cleaning (testing data) done
-2020-05-20/00:33:13		Data for time series prepared
-2020-05-20/00:33:33		Necessary plotting done
