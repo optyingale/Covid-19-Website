@@ -32,7 +32,7 @@ def pie_chart(df, x, y, category):
     for column in df.columns[1:]:
         other.append(df.loc[21:][column].sum())
 
-    df.drop(df.index[21:], inplace = True)
+    df = df.drop(df.index[21:])
     df.loc[df.index.max()+1] = other
 
 
