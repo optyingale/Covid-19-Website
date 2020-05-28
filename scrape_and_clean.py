@@ -32,7 +32,7 @@ def scrape_table(url):
 def clean_data(df):
     # Checking for which dataframe is recieved
     if 'Name of State / UT' in df:
-        df = df.iloc[:33, :]
+        df = df.iloc[:35, :]
         df.drop('S. No.', axis=1, inplace=True)
         df.set_index('Name of State / UT', inplace=True)
         for col in df.columns:

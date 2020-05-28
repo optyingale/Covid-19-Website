@@ -1,0 +1,6 @@
+2020-05-28/19:55:15		Starting first run
+2020-05-28/20:04:14		Starting first run
+2020-05-28/20:04:20		Scraping done
+2020-05-28/20:04:28		Scraping and cleaning (testing data) done
+2020-05-28/20:04:31		Data for time series prepared
+2020-05-28/20:05:07		Necessary plotting done
