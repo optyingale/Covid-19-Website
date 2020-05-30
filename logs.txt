@@ -4,3 +4,20 @@
 2020-05-28/20:04:28		Scraping and cleaning (testing data) done
 2020-05-28/20:04:31		Data for time series prepared
 2020-05-28/20:05:07		Necessary plotting done
+2020-05-30/20:04:40		Starting first run
+2020-05-30/20:04:50		Scraping done
+2020-05-30/20:05:00		Scraping and cleaning (testing data) done
+2020-05-30/20:05:04		Data for time series prepared
+2020-05-30/20:06:12		Necessary plotting done
+2020-05-30/20:21:16		I've hit myself
+2020-05-30/20:36:16		Update Started
+2020-05-30/20:36:16		I've hit myself
+2020-05-30/20:36:43		Scraping and cleaning (testing data) done
+2020-05-30/20:36:45		Data for time series prepated
+2020-05-30/20:37:02		Necessary plotting done
+2020-05-30/20:51:16		I've hit myself
+2020-05-30/20:52:43		Starting first run
+2020-05-30/20:52:49		Scraping done
+2020-05-30/20:52:57		Scraping and cleaning (testing data) done
+2020-05-30/20:52:58		Data for time series prepared
+2020-05-30/20:53:23		Necessary plotting done

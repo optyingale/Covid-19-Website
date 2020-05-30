@@ -32,7 +32,7 @@ logger.log('Scraping done')
 # temp_df1['Positive Rate'] = ((temp_df1['TotalCases']/temp_df1['Total Tests'])*100).round(2)
 # temp_df1.replace(np.inf, 0, inplace=True)
 
-temp_df.rename(columns={temp_df.columns[1]: 'Total Cases',
+temp_df.rename(columns={temp_df.columns[4]: 'Total Cases',
                         temp_df.columns[3]: 'Deaths',
                         temp_df.columns[2]: 'Total Recovered'},
                inplace=True)
@@ -66,11 +66,11 @@ total = np.append(total, cases - outcome)
 
 total1 = temp_df1.loc[0][[1, 5, 3, 6]].values
 
-total_cases_india = temp_df.columns[1]
+total_cases_india = temp_df.columns[4]
 total_recovered_india = temp_df.columns[2]
 deaths_india = temp_df.columns[3]
-total_tests_india = temp_df.columns[7]
-positive_rate_india = temp_df.columns[8]
+total_tests_india = temp_df.columns[8]
+positive_rate_india = temp_df.columns[9]
 
 total_cases_world = temp_df1.columns[1]
 total_recovered_world = temp_df1.columns[5]
@@ -124,7 +124,7 @@ def get_data():
     # temp_df1['Positive Rate'] = ((temp_df1['TotalCases']/temp_df1['Total Tests'])*100).round(2)
     # temp_df1.replace(np.inf, 0, inplace=True)
 
-    temp_df.rename(columns={temp_df.columns[1]: 'Total Cases',
+    temp_df.rename(columns={temp_df.columns[4]: 'Total Cases',
                             temp_df.columns[3]: 'Deaths',
                             temp_df.columns[2]: 'Total Recovered'},
                    inplace=True)
