@@ -75,8 +75,8 @@ positive_rate_india = temp_df.columns[9]
 total_cases_world = temp_df1.columns[1]
 total_recovered_world = temp_df1.columns[5]
 deaths_world = temp_df1.columns[3]
-total_tests_world = temp_df1.columns[7]
-positive_rate_world = temp_df1.columns[9]
+total_tests_world = temp_df1.columns[8]
+positive_rate_world = temp_df1.columns[10]
 
 confirmed_url = 'https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data' \
                 '/csse_covid_19_time_series/time_series_covid19_confirmed_global.csv '

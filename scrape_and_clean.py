@@ -79,7 +79,7 @@ def clean_data(df):
         world_df.drop('#', axis=1, inplace=True)
 
         # Dropping columns after active cases, this can be changed depending on need for analysis later on
-        df = world_df.iloc[upper_index:lower_index, :-7]
+        df = world_df.iloc[upper_index:lower_index, :-10]
         df['Total Tests'] = world_df.loc[:, 'TotalTests'].iloc[upper_index:lower_index]
         df.set_index('Country,Other', inplace=True)
 
