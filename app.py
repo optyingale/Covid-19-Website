@@ -1,3 +1,4 @@
+# alternateive when using 0.0.0.0:5000
 # To run the app
 # 1. set FLASK_APP=app.py
 # 2. flask run
