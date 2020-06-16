@@ -1,7 +1,21 @@
 # This is my Dashboard for COVID-19 stats/data
 
-##### Also my first attempt at front-end
+This website provides a basic comparison between different countries and states(India) on various basis:
+1. Total Cases & Total Deaths (pie and bar chart)
+1. Total Recovered & Total Cases
+1. Test positive rate and Total tests
+1. Time Series of Cases Recovered and Deaths (India only) 
+
 <a href = "https://covid-19-website-daily.herokuapp.com/">My Current working deployment </a>
+
+Some Screenshots of my working deployment
+
+![image1](ss1.png)
+
+![image2](ss2.png)
+
+![image3](ss3.png)
+
 <br>May 16:<br>
 <p>Note: Always add <code>gunicorn</code> in the requirements.txt </p>
 <br>May 17:<br>
@@ -24,3 +38,6 @@ Even though reponse time is lower, the app goes into idling until dyno is starte
 <ul>
     <li>Added in 'other' category in piechart for world as it was pretty significant and I was unintentionally misleading viewers</li>
 </ul></p>
+<br>June 16:<br>
+<p> Added screenshots to readme</p>
+
