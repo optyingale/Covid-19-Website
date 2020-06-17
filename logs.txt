@@ -21,3 +21,82 @@
 2020-05-30/20:52:57		Scraping and cleaning (testing data) done
 2020-05-30/20:52:58		Data for time series prepared
 2020-05-30/20:53:23		Necessary plotting done
+2020-06-17/16:05:43		Starting first run
+2020-06-17/16:16:46		Starting first run
+2020-06-17/16:16:50		Scraping done
+2020-06-17/16:16:54		Scraping and cleaning (testing data) done
+2020-06-17/16:16:59		Data for time series prepared
+2020-06-17/16:17:01		Necessary plotting done
+2020-06-17/16:27:31		Starting first run
+2020-06-17/16:27:35		Scraping done
+2020-06-17/16:27:42		Scraping and cleaning (testing data) done
+2020-06-17/16:27:45		Data for time series prepared
+2020-06-17/16:29:41		Starting first run
+2020-06-17/16:29:45		Scraping done
+2020-06-17/16:29:49		Scraping and cleaning (testing data) done
+2020-06-17/16:29:51		Data for time series prepared
+2020-06-17/16:31:42		Starting first run
+2020-06-17/16:33:17		Starting first run
+2020-06-17/16:33:20		Scraping done
+2020-06-17/16:33:37		Scraping and cleaning (testing data) done
+2020-06-17/16:33:37		Data for time series prepared
+2020-06-17/16:37:55		Starting first run
+2020-06-17/16:37:59		Scraping done
+2020-06-17/16:38:03		Scraping and cleaning (testing data) done
+2020-06-17/16:38:04		Data for time series prepared
+2020-06-17/16:38:07		Necessary plotting done
+2020-06-17/16:41:20		Starting first run
+2020-06-17/16:41:25		Scraping done
+2020-06-17/16:41:29		Scraping and cleaning (testing data) done
+2020-06-17/16:41:29		Data for time series prepared
+2020-06-17/16:41:32		Necessary plotting done
+2020-06-17/16:42:11		Starting first run
+2020-06-17/16:42:15		Scraping done
+2020-06-17/16:42:19		Scraping and cleaning (testing data) done
+2020-06-17/16:42:20		Data for time series prepared
+2020-06-17/16:42:22		Necessary plotting done
+2020-06-17/16:45:13		Starting first run
+2020-06-17/16:45:17		Scraping done
+2020-06-17/16:45:21		Scraping and cleaning (testing data) done
+2020-06-17/16:45:22		Data for time series prepared
+2020-06-17/16:45:24		Necessary plotting done
+2020-06-17/16:46:44		Starting first run
+2020-06-17/16:46:48		Scraping done
+2020-06-17/16:46:52		Scraping and cleaning (testing data) done
+2020-06-17/16:46:56		Data for time series prepared
+2020-06-17/16:46:58		Necessary plotting done
+2020-06-17/16:50:54		Starting first run
+2020-06-17/16:50:57		Scraping done
+2020-06-17/16:51:02		Scraping and cleaning (testing data) done
+2020-06-17/16:51:03		Data for time series prepared
+2020-06-17/16:51:05		Necessary plotting done
+2020-06-17/16:52:03		Starting first run
+2020-06-17/16:52:07		Scraping done
+2020-06-17/16:52:11		Scraping and cleaning (testing data) done
+2020-06-17/16:52:11		Data for time series prepared
+2020-06-17/16:52:14		Necessary plotting done
+2020-06-17/16:54:21		Starting first run
+2020-06-17/16:54:25		Scraping done
+2020-06-17/16:54:30		Scraping and cleaning (testing data) done
+2020-06-17/16:54:31		Data for time series prepared
+2020-06-17/16:54:33		Necessary plotting done
+2020-06-17/16:57:34		Starting first run
+2020-06-17/16:57:39		Scraping done
+2020-06-17/16:57:43		Scraping and cleaning (testing data) done
+2020-06-17/16:57:43		Data for time series prepared
+2020-06-17/16:57:46		Necessary plotting done
+2020-06-17/16:58:21		Starting first run
+2020-06-17/16:58:24		Scraping done
+2020-06-17/16:58:28		Scraping and cleaning (testing data) done
+2020-06-17/16:58:29		Data for time series prepared
+2020-06-17/16:58:32		Necessary plotting done
+2020-06-17/16:58:58		Starting first run
+2020-06-17/16:59:02		Scraping done
+2020-06-17/16:59:06		Scraping and cleaning (testing data) done
+2020-06-17/16:59:08		Data for time series prepared
+2020-06-17/16:59:10		Necessary plotting done
+2020-06-17/17:01:11		Starting first run
+2020-06-17/17:01:15		Scraping done
+2020-06-17/17:01:19		Scraping and cleaning (testing data) done
+2020-06-17/17:01:20		Data for time series prepared
+2020-06-17/17:01:22		Necessary plotting done

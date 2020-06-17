@@ -18,9 +18,36 @@ def bar_chart(df, x, y, category):
     fig.update_traces(textposition='outside')
 
     fig.update_layout(title={'x': 0.5, 'xanchor': 'center'},
-                      height=650)
+                      height=650,
+                      hovermode='x')
 
     fig.update_xaxes(tickangle=-45)
+
+    return plotly.offline.plot(fig, output_type='div')
+
+
+def daily_bar(deaths, ma=3):
+    df = deaths
+    daily_deaths = []
+
+    for i in range(df.shape[0]):
+        if i == 0:
+            daily_deaths.append(0)
+        else:
+            daily_deaths.append(df.iloc[i]['India'] - df.iloc[i - 1]['India'])
+
+    df.insert(2, "Daily Deaths", daily_deaths, True)
+
+    df['MA'] = df['Daily Deaths'].rolling(ma).mean()
+    df['MA'].fillna(0, inplace=True)
+
+    fig = go.Figure([go.Bar(x=df['Date'], y=df['Daily Deaths'], name='Daily Deaths')])
+    fig.add_trace(go.Scatter(x=df['Date'], y=df['MA'], mode='lines', name=f'moving average of {ma}'))
+    fig.update_layout(height=700,
+                      title={'x': 0.5, 'xanchor': 'center'},
+                      hovermode='x',
+                      template='plotly_dark',
+                      title_text='Daily Deaths (India)')
 
     return plotly.offline.plot(fig, output_type='div')
 
@@ -34,7 +61,6 @@ def pie_chart(df, x, y, category):
 
     df = df.drop(df.index[21:])
     df.loc[df.index.max()+1] = other
-
 
     fig = make_subplots(rows=1, cols=2, specs=[[{'type': 'domain'}, {'type': 'domain'}]])
     fig.add_trace(go.Pie(labels=df[df.columns[0]], values=df[x], name=x),
@@ -70,5 +96,6 @@ def time_series(confirmed, deaths, recovered):
     fig.update_layout(title={'x': 0.5, 'xanchor': 'center'},
                       title_text='Time Series for confirmed, deaths and recovered',
                       template='plotly_dark',
-                      height=700)
+                      height=700,
+                      hovermode='x')
     return plotly.offline.plot(fig, output_type='div')

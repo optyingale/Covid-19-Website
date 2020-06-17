@@ -104,6 +104,7 @@ test_positive_rate_tests = plotting_functions.bar_chart(temp_df, positive_rate_i
 test_positive_rate_tests1 = plotting_functions.bar_chart(temp_df1.iloc[2:22, :], positive_rate_world, total_tests_world,
                                                          'World')
 time_series = plotting_functions.time_series(confirmed_df, deaths_df, recovered_df)
+daily_deaths = plotting_functions.daily_bar(deaths_df)
 print('Necessary plotting done', time.strftime("%I:%M:%S"))
 logger.log('Necessary plotting done')
 
@@ -164,8 +165,9 @@ def get_data():
     print('Data for time series prepared', time.strftime("%I:%M:%S"))
     logger.log('Data for time series prepated')
 
-    global plotly_table, plotly_table1, total_cases_deaths, total_cases_deaths1, pie_total_cases_deaths, pie_total_cases_deaths1
-    global total_recovered_cases, total_recovered_cases1, test_positive_rate_tests, test_positive_rate_tests1, time_series, html
+    global plotly_table, plotly_table1, total_cases_deaths, total_cases_deaths1, \
+        pie_total_cases_deaths, pie_total_cases_deaths1, total_recovered_cases, total_recovered_cases1, \
+        test_positive_rate_tests, daily_deaths, test_positive_rate_tests1, time_series, html
     plotly_table = plotting_functions.table(temp_df)
     plotly_table1 = plotting_functions.table(temp_df1)
     total_cases_deaths = plotting_functions.bar_chart(temp_df, total_cases_india, deaths_india, 'India')
@@ -179,6 +181,7 @@ def get_data():
     test_positive_rate_tests1 = plotting_functions.bar_chart(temp_df1.iloc[2:22, :], positive_rate_world,
                                                              total_tests_world, 'World')
     time_series = plotting_functions.time_series(confirmed_df, deaths_df, recovered_df)
+    daily_deaths = plotting_functions.daily_bar(deaths_df)
     print('Necessary plotting done', time.strftime("%I:%M:%S"))
     logger.log('Necessary plotting done')
 
@@ -211,7 +214,8 @@ def homepage():
                            total_recovered_cases1=total_recovered_cases1,
                            test_positive_rate_tests=test_positive_rate_tests,
                            test_positive_rate_tests1=test_positive_rate_tests1,
-                           time_series=time_series, )
+                           time_series=time_series,
+                           daily_deaths=daily_deaths)
 
     return html
 

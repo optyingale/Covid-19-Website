@@ -16,6 +16,7 @@ Some Screenshots of my working deployment
 
 ![image3](ss3.png)
 
+<p></p>
 <br>May 16:<br>
 <p>Note: Always add <code>gunicorn</code> in the requirements.txt </p>
 <br>May 17:<br>
@@ -25,7 +26,7 @@ Some Screenshots of my working deployment
 The above has helped me achieve what I was looking for. Since update the retrieve time has drastically 
 come down to 1 second response from server</p><br><p>Note: <code>render_template</code> has to be inside any app.route<br>
 Even though reponse time is lower, the app goes into idling until dyno is started. Looking for a way around that</p>
-<br>
+
 <br>May 19:<br>
 <p>
 <ul>
@@ -40,4 +41,5 @@ Even though reponse time is lower, the app goes into idling until dyno is starte
 </ul></p>
 <br>June 16:<br>
 <p> Added screenshots to readme</p>
-
+<br>June 17:<br>
+<p> Added daily deaths in india with moving average of 3</p>
